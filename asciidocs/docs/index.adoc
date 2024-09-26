@@ -13,5 +13,38 @@ icon:github-square[link=https://github.com/2324-4bhif-wmc/2324-4bhif-wmc-lecture
 icon:home[link=http://edufs.edu.htl-leonding.ac.at/~t.stuetz/hugo/2021/01/lecture-notes/]
 endif::backend-html5[]
 
-== 2024-09-xx
+== 2024-09-26
+
+=== Bezeichnungen in git-Repositories
+
+image::git-repo-names.png[]
+
+* Bezeichnungen sollten immer im kebab-Casing erstellt werden:
+** Grund: beim erstellen von Docker-Images kann es zu Problemen kommen.
+** statt "FerienPass" -> "ferien-pass"
+
+
+=== Minimum Viable Product
+
+* Eine User Story muss so klein sein, dass man sie in einem Sprint erledigen kann
+
+* https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp
+
+* Alle 2 Wochen wird ein  neues MVP erstellt (Rapid Value Creation)
+
+image::minimum-viable-product.png[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
