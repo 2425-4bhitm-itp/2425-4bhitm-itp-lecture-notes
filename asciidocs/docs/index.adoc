@@ -121,6 +121,32 @@ jobs:
 
 image::gh-actions-2nd-run.png[]
 
+== 2024-12-05
+
+=== Rollenkonzept
+
+image::rollenkonzept.png[]
+
+=== Authorisierung und Authentifizierung
+
+* Authorization: Wer bin ich? -> 401 Unauthorized
+* Authentication: Was darf ich? -> 403 Forbidden
+
+
+=== Keycloak
+
+* User
+
+== 2024-12-12
+
+image::keycloak-architektur.png[]
+
+* https://www.urlencoder.org/[URL Encoder/Decoder]
+
+
+
+
+
 
 
 
