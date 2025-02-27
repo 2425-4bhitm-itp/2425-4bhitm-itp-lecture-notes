@@ -144,7 +144,18 @@ image::keycloak-architektur.png[]
 * https://www.urlencoder.org/[URL Encoder/Decoder]
 
 
+== 2025-02-27 Security
 
+----
+git clone git@github.com:caberger/keycloak.git
+
+cd compose
+docker compose up --build
+
+# Löschen der images und volumes
+docker image ls -q | xargs docker image rm
+docker volume ls -q | xargs docker volume rm
+----
 
 
 
