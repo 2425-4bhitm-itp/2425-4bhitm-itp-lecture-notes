@@ -565,7 +565,7 @@ pre.rouge .gs {
 <div class="details">
 <span id="author" class="author">Thomas Stütz</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2024-12-13</span>
+<span id="revdate">2025-02-27</span>
 <br><span id="revremark">Lecture Notes for Courses at HTL Leonding</span>
 </div>
 <div id="toc" class="toc2">
@@ -591,6 +591,7 @@ pre.rouge .gs {
 </ul>
 </li>
 <li><a href="#_2024_12_12">4. 2024-12-12</a></li>
+<li><a href="#_2025_02_27_security">5. 2025-02-27 Security</a></li>
 </ul>
 </div>
 </div>
@@ -845,11 +846,28 @@ pre.rouge .gs {
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_2025_02_27_security"><a class="anchor" href="#_2025_02_27_security"></a>5. 2025-02-27 Security</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>git clone git@github.com:caberger/keycloak.git
+
+cd compose
+docker compose up --build
+
+# Löschen der images und volumes
+docker image ls -q | xargs docker image rm
+docker volume ls -q | xargs docker volume rm</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2024-12-13 14:09:00 UTC
+Last updated 2025-02-27 12:21:51 UTC
 </div>
 </div>
 </body>
