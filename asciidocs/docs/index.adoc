@@ -157,7 +157,7 @@ docker image ls -q | xargs docker image rm
 docker volume ls -q | xargs docker volume rm
 ----
 
-== 2025-03-06
+== 2025-03-06 OIDC
 
 image::reverse-engineering.png[]
 
@@ -168,6 +168,11 @@ image::authentication-authorization.png[]
 * Für die Umsetzung verwenden wir Keycloak
 
 * RBAC: Role Based Access Control
+
+.Quelle: https://abdulsamet-ileri.medium.com/introduction-to-keycloak-227c3902754a
+image::keycloak-standard-flow.png[Introduction to Keycloak^]
+
+* Wir verwenden hier den OIDC Standard
 
 
 

@@ -1,0 +1,23 @@
+GET {{KEYCLOAK_URL}}/realms/{{REALM}}/.well-known/openid-configuration
+
+> {% client.global.set("token_endpoint", response.body.token_endpoint); %}
+
+###
+
+POST {{token_endpoint}}
+Content-Type: application/x-www-form-urlencoded
+
+client_secret={{CLIENT_SECRET}}&client_id=backend&username=john.doe&password=password&grant_type=password&redirect_uri=http%3A%2F%2Flocalhost:4200
+
+> {% client.global.set("access_token", response.body.access_token); %}
+
+###
+
+GET http://localhost:8080/hello/admin
+Authorization: Bearer {{access_token}}
+
+###
+
+GET {{KEYCLOAK_URL}}/realms/{{REALM}}/protocol/openid-connect/token
+
+###
