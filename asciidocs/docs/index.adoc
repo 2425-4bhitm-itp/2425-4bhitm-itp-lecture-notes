@@ -157,8 +157,17 @@ docker image ls -q | xargs docker image rm
 docker volume ls -q | xargs docker volume rm
 ----
 
+== 2025-03-06
 
+image::reverse-engineering.png[]
 
+image::reverse-engineering.png[]
+
+image::authentication-authorization.png[]
+
+* Für die Umsetzung verwenden wir Keycloak
+
+* RBAC: Role Based Access Control
 
 
 
