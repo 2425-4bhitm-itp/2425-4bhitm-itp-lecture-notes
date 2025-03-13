@@ -565,7 +565,7 @@ pre.rouge .gs {
 <div class="details">
 <span id="author" class="author">Thomas Stütz</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2025-03-06</span>
+<span id="revdate">2025-03-13</span>
 <br><span id="revremark">Lecture Notes for Courses at HTL Leonding</span>
 </div>
 <div id="toc" class="toc2">
@@ -593,6 +593,11 @@ pre.rouge .gs {
 <li><a href="#_2024_12_12">4. 2024-12-12</a></li>
 <li><a href="#_2025_02_27_security">5. 2025-02-27 Security</a></li>
 <li><a href="#_2025_03_06_oidc">6. 2025-03-06 OIDC</a></li>
+<li><a href="#_2025_03_13">7. 2025-03-13</a>
+<ul class="sectlevel2">
+<li><a href="#_rbac">7.1. RBAC</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -907,11 +912,108 @@ docker volume ls -q | xargs docker volume rm</pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_2025_03_13"><a class="anchor" href="#_2025_03_13"></a>7. 2025-03-13</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_rbac"><a class="anchor" href="#_rbac"></a>7.1. RBAC</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Role Based Access Control</p>
+</li>
+<li>
+<p>Die Zugriffsrechte auf eine APP (API) werden oft über die API selbst definiert, dh bestimmte Endpoints sind nur mit bestimmten Rollen zugänglich</p>
+</li>
+<li>
+<p>Bei RBAC sind dazu Annotationen im Code notwendig.</p>
+</li>
+<li>
+<p>Eine Alternative dazu sind sogenannte Policies (Politiken), die in Keycloak definiert werden.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Keycloak ist ein IAM ein <strong>Identity and Access Management System</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Was ist eine Rolle?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Eine Sammlung von Rechten (Permissions)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Wenn ein Recht für den Zugriff auf einen Endpoint nicht vorhanden ist, wird ein 403 Forbidden zurückgegeben.</p>
+</li>
+<li>
+<p>Voraussetzung für die Überprüfung auf ein vorhandenes Recht ist, dass der Benutzer authentifiziert ist und ein gültiges Token besitzt.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wer bin ich? (Authentifizierung)</p>
+</li>
+<li>
+<p>Was darf ich? (Autorisierung) - welche Rechte habe ich?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Was ist eine Resource?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ein REST-Endpoint, auf den zugegriffen werden kann.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Annotationen in Quarkus:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>@PermitAll: Jeder darf auf den Endpoint zugreifen</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>application.properties</p>
+<div class="ulist">
+<ul>
+<li>
+<p>quarkus.oidc.auth-server-url damit wird die ausstellende Stelle des Tokens definiert</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Für Web-Frontends</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.keycloak.org/securing-apps/javascript-adapter" class="bare">https://www.keycloak.org/securing-apps/javascript-adapter</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2025-03-06 18:51:11 UTC
+Last updated 2025-03-13 11:42:35 UTC
 </div>
 </div>
 </body>
