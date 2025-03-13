@@ -17,7 +17,7 @@ public class GreetingResource {
         return "Hello from Quarkus REST";
     }
 
-    @RolesAllowed("admin")
+    @RolesAllowed({"admin"})
     @GET
     @Path("admin")
     @Produces(MediaType.TEXT_PLAIN)

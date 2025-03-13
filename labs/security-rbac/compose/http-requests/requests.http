@@ -21,3 +21,4 @@ Authorization: Bearer {{access_token}}
 GET {{KEYCLOAK_URL}}/realms/{{REALM}}/protocol/openid-connect/token
 
 ###
+

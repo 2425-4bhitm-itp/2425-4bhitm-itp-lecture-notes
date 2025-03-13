@@ -174,6 +174,43 @@ image::keycloak-standard-flow.png[Introduction to Keycloak^]
 
 * Wir verwenden hier den OIDC Standard
 
+== 2025-03-13
+
+=== RBAC
+
+* Role Based Access Control
+
+* Die Zugriffsrechte auf eine APP (API) werden oft über die API selbst definiert, dh bestimmte Endpoints sind nur mit bestimmten Rollen zugänglich
+
+* Bei RBAC sind dazu Annotationen im Code notwendig.
+
+* Eine Alternative dazu sind sogenannte Policies (Politiken), die in Keycloak definiert werden.
+
+** Keycloak ist ein IAM ein *Identity and Access Management System*.
+
+
+* Was ist eine Rolle?
+** Eine Sammlung von Rechten (Permissions)
+
+* Wenn ein Recht für den Zugriff auf einen Endpoint nicht vorhanden ist, wird ein 403 Forbidden zurückgegeben.
+
+* Voraussetzung für die Überprüfung auf ein vorhandenes Recht ist, dass der Benutzer authentifiziert ist und ein gültiges Token besitzt.
+** Wer bin ich? (Authentifizierung)
+** Was darf ich? (Autorisierung) - welche Rechte habe ich?
+
+* Was ist eine Resource?
+** Ein REST-Endpoint, auf den zugegriffen werden kann.
+
+* Annotationen in Quarkus:
+** @PermitAll: Jeder darf auf den Endpoint zugreifen
+
+
+* application.properties
+** quarkus.oidc.auth-server-url damit wird die ausstellende Stelle des Tokens definiert
+
+* Für Web-Frontends
+
+** https://www.keycloak.org/securing-apps/javascript-adapter
 
 
 
