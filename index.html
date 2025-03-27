@@ -565,7 +565,7 @@ pre.rouge .gs {
 <div class="details">
 <span id="author" class="author">Thomas Stütz</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2025-03-13</span>
+<span id="revdate">2025-03-27</span>
 <br><span id="revremark">Lecture Notes for Courses at HTL Leonding</span>
 </div>
 <div id="toc" class="toc2">
@@ -596,6 +596,11 @@ pre.rouge .gs {
 <li><a href="#_2025_03_13">7. 2025-03-13</a>
 <ul class="sectlevel2">
 <li><a href="#_rbac">7.1. RBAC</a></li>
+</ul>
+</li>
+<li><a href="#_2025_03_27">8. 2025-03-27</a>
+<ul class="sectlevel2">
+<li><a href="#_keycloak_bei_angular_frontend">8.1. Keycloak bei Angular-Frontend</a></li>
 </ul>
 </li>
 </ul>
@@ -1009,11 +1014,116 @@ docker volume ls -q | xargs docker volume rm</pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_2025_03_27"><a class="anchor" href="#_2025_03_27"></a>8. 2025-03-27</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_keycloak_bei_angular_frontend"><a class="anchor" href="#_keycloak_bei_angular_frontend"></a>8.1. Keycloak bei Angular-Frontend</h3>
+<div class="sect3">
+<h4 id="_richtige_lokale_installation_von_angular"><a class="anchor" href="#_richtige_lokale_installation_von_angular"></a>8.1.1. Richtige (lokale) Installation von Angular</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Man möchte sich nicht darauf verlassen, was ein anderer auf der Maschine installiert hat.</p>
+</li>
+<li>
+<p>Angular wird lokal installiert</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>npm init -y
+npm install @angular/cli</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die globale Installation verschmutzt den Pfad und legt ng in einer bestimmten Version in den globalen Path.</p>
+</li>
+<li>
+<p>npx &#8230;&#8203; Node Package Exceutor</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>npx ng new ng-demo</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>npm outdated
+find . -type f -print | wc -l</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exkurs_di_in_angular"><a class="anchor" href="#_exkurs_di_in_angular"></a>8.1.2. Exkurs: DI in Angular</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Promise: Versprechen, dass nach Fertigstellung Daten "geliefert" werden.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noopener">MDN Promise</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then" target="_blank" rel="noopener">Promise.prototype.then()</a></p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="typescript"><span class="kd">const</span> <span class="nx">promise1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">//resolve("Success!");</span>
+  <span class="nf">reject</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="nx">promise1</span><span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+  <span class="c1">// Expected output: "Success!"</span>
+<span class="p">},()</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Das ist schief gegangen</span><span class="dl">'</span><span class="p">)}</span>
+             <span class="p">);</span></code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>async-await</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function" class="bare">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>fetch-api</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_übung"><a class="anchor" href="#_übung"></a>8.1.3. Übung</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Erstellen einer Angular-App, bei der man sich an einem keycloak server authentifiziert und dann erhält man einen chuck-norris witz.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2025-03-13 11:42:35 UTC
+Last updated 2025-03-27 16:05:10 UTC
 </div>
 </div>
 </body>
