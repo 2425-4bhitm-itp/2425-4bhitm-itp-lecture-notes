@@ -213,6 +213,82 @@ image::keycloak-standard-flow.png[Introduction to Keycloak^]
 ** https://www.keycloak.org/securing-apps/javascript-adapter
 
 
+== 2025-03-27
+
+=== Keycloak bei Angular-Frontend
+
+==== Richtige (lokale) Installation von Angular
+
+* Man möchte sich nicht darauf verlassen, was ein anderer auf der Maschine installiert hat.
+
+* Angular wird lokal installiert
+
+----
+npm init -y
+npm install @angular/cli
+----
+
+* Die globale Installation verschmutzt den Pfad und legt ng in einer bestimmten Version in den globalen Path.
+
+* npx ... Node Package Exceutor
+
+----
+npx ng new ng-demo
+----
+
+
+----
+npm outdated
+find . -type f -print | wc -l
+
+----
+
+
+==== Exkurs: DI in Angular
+
+* Promise: Versprechen, dass nach Fertigstellung Daten "geliefert" werden.
+
+** https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[MDN Promise^]
+
+** https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then[Promise.prototype.then()^]
++
+[source,typescript]
+----
+const promise1 = new Promise((resolve, reject) => {
+  //resolve("Success!");
+  reject();
+});
+
+promise1.then((value) => {
+  console.log(value);
+  // Expected output: "Success!"
+},() => {console.log('Das ist schief gegangen')}
+             );
+----
+
+* async-await
+
+** https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+
+
+* fetch-api
+
+
+==== Übung
+
+* Erstellen einer Angular-App, bei der man sich an einem keycloak server authentifiziert und dann erhält man einen chuck-norris witz.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
