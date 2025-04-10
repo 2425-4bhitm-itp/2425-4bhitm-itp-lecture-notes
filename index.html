@@ -565,7 +565,7 @@ pre.rouge .gs {
 <div class="details">
 <span id="author" class="author">Thomas Stütz</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2025-03-27</span>
+<span id="revdate">2025-04-10</span>
 <br><span id="revremark">Lecture Notes for Courses at HTL Leonding</span>
 </div>
 <div id="toc" class="toc2">
@@ -601,6 +601,12 @@ pre.rouge .gs {
 <li><a href="#_2025_03_27">8. 2025-03-27</a>
 <ul class="sectlevel2">
 <li><a href="#_keycloak_bei_angular_frontend">8.1. Keycloak bei Angular-Frontend</a></li>
+</ul>
+</li>
+<li><a href="#_2025_04_10">9. 2025-04-10</a>
+<ul class="sectlevel2">
+<li><a href="#_frontend_vs_backend">9.1. Frontend vs Backend</a></li>
+<li><a href="#_einrichten_eines_nginx_servers">9.2. Einrichten eines nginx-Servers</a></li>
 </ul>
 </li>
 </ul>
@@ -1119,11 +1125,74 @@ find . -type f -print | wc -l</pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_2025_04_10"><a class="anchor" href="#_2025_04_10"></a>9. 2025-04-10</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_frontend_vs_backend"><a class="anchor" href="#_frontend_vs_backend"></a>9.1. Frontend vs Backend</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/frontend-vs-backend.png" alt="frontend vs backend">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_einrichten_eines_nginx_servers"><a class="anchor" href="#_einrichten_eines_nginx_servers"></a>9.2. Einrichten eines nginx-Servers</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/reverse-proxy-vm.png" alt="reverse proxy vm">
+</div>
+</div>
+<div class="listingblock">
+<div class="title">bash_history</div>
+<div class="content">
+<pre>apt-get update &amp;&amp; apt-get dist-upgrade
+apt autoremove
+df -h
+docker container ls -a
+docker container prune
+docker image ls
+docker container prune
+docker image prune
+docker image ls -q | xargs docker image rm
+docker image ls
+docker volume ls
+docker volume prune
+docker volume prune -f
+docker volume prune -a
+docker volume ls
+docker builder prune -f
+docker network ls
+docker network rm leo-iot_default
+docker network rm leo-iot_quarkus
+systemctl status nginx
+apt install nginx
+systemctl enable nginx
+systemctl restart nginx
+netstat -ant
+apt install net-tools
+netstat -ant
+netstat -antp
+ifconfig
+cd /etc/nginx/conf.d/
+cd ..
+ll
+cat nginx.conf
+cd sites-enabled/
+cat default
+cd /var/www/html/
+ll
+nano index.nginx-debian.html</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2025-03-27 16:05:10 UTC
+Last updated 2025-04-10 19:03:36 UTC
 </div>
 </div>
 </body>
