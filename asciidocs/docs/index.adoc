@@ -279,7 +279,58 @@ promise1.then((value) => {
 * Erstellen einer Angular-App, bei der man sich an einem keycloak server authentifiziert und dann erhält man einen chuck-norris witz.
 
 
+== 2025-04-10
 
+=== Frontend vs Backend
+
+image::frontend-vs-backend.png[]
+
+
+
+=== Einrichten eines nginx-Servers
+
+image::reverse-proxy-vm.png[]
+
+.bash_history
+----
+apt-get update && apt-get dist-upgrade
+apt autoremove
+df -h
+docker container ls -a
+docker container prune
+docker image ls
+docker container prune
+docker image prune
+docker image ls -q | xargs docker image rm
+docker image ls
+docker volume ls
+docker volume prune
+docker volume prune -f
+docker volume prune -a
+docker volume ls
+docker builder prune -f
+docker network ls
+docker network rm leo-iot_default
+docker network rm leo-iot_quarkus
+systemctl status nginx
+apt install nginx
+systemctl enable nginx
+systemctl restart nginx
+netstat -ant
+apt install net-tools
+netstat -ant
+netstat -antp
+ifconfig
+cd /etc/nginx/conf.d/
+cd ..
+ll
+cat nginx.conf
+cd sites-enabled/
+cat default
+cd /var/www/html/
+ll
+nano index.nginx-debian.html
+----
 
 
 
