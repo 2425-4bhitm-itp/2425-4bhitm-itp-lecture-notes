@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:17.4-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: db
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    image: vehicle-backend:latest
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  pgdata:

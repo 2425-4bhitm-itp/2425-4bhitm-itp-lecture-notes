@@ -334,6 +334,20 @@ nano index.nginx-debian.html
 
 
 
+== 2025-04-24
+
+=== Erstellen einer docker-compose.yaml für Quarkus-Backend
+
+* Der Code ist https://github.com/2425-4bhitm-sew/2425-4bhitm-sew-lecture-notes[hier^] zu finden.
+** SubDir: labs/docker/vehicle/
+
+* Dockern einer postgres-db
+** https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/[How to Use the Postgres Docker Official Image^]
+
+IMPORTANT: In obigem Artikel sieht man schön, wie man mit healthcheck die Startreihenfolge der Container (Services) steuern kann.
+
+
+
 
 
 
