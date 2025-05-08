@@ -348,6 +348,34 @@ IMPORTANT: In obigem Artikel sieht man schön, wie man mit healthcheck die Start
 
 
 
+== 2025-04-08
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xWWXD_NKpHs?si=k5yalhUTDohinzaD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+++++
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ftnH9ZX1Atk?si=7AgAcVuPm0qYBYDP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+++++
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xo5V9g9joFs?si=4vj26WGDEHsfvYXb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+++++
+
+=== Eclipse Data Store
+
+image::eclipse-data-store.png[]
+
+* https://eclipsestore.io/[^]
+
+
+=== Fortsetzung gh-actions
+
+* https://github.com/2425-4bhitm-itp/vehicle-gh-actions-demo[^]
+
+
+
+
 
 
 
