@@ -5,6 +5,7 @@ jobs:
   Build-Backend:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: List files in the repository
         working-directory: labs/docker/vehicle/backend
         run: |
