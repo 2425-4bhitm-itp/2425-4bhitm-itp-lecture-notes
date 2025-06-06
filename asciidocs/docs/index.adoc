@@ -383,6 +383,7 @@ image::eclipse-data-store.png[]
 
 * Anschließend wird nginx installiert und konfiguriert, damit die App erreichbar ist.
 
+* https://github.com/htl-leonding/4bhitm-letsencrypt[^]
 
 .localhost
 ----
