@@ -555,6 +555,8 @@ root@vm09:~# history
   121  history
 ----
 
+.Login with filezilla
+image::login-with-filezilla.png[]
 
 
 
