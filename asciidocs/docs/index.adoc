@@ -374,11 +374,185 @@ image::eclipse-data-store.png[]
 * https://github.com/2425-4bhitm-itp/vehicle-gh-actions-demo[^]
 
 
+== 2025--06-06 Installieren von nginx auf vm
+
+* Wir konfigurieren einen passwortlosen Zugriff als root auf die vm über ssh.
+* Der Zugriff mittels Passwort wird deaktiviert, da sehr viele Anfragen von Bots kommen, die versuchen, sich mittels Brute-Force-Angriffen Zugang zu verschaffen.
+** `cat /var/log/auth.log`
+** ca 30.000 Angriffe / Minute, siehe hierzu https://www.zdf.de/play/dokus/leschs-kosmos-120/angriff-aus-dem-cyberspace-wie-verwundbar-sind-wir-100[Angriff aus dem Cyberspace - wie verwundbar sind wir?^] - Minute 12:00
+
+* Anschließend wird nginx installiert und konfiguriert, damit die App erreichbar ist.
 
 
+.localhost
+----
+10149  nano ~/.ssh/config
+10150  cd ~/.ssh/
+10151  l
+10152  cd -
+10153  ssh vm09
+10154  ssh-copy-id  vm09
+10155  ssh vm09
+10156  nano ~/.ssh/config
+10157  cd .ssh
+10158  l
+10159  cat id_rsa.pub
+10160  cat id_ed25519_github_ThomasStuetz.pub
+10161  ssh-copy-id  -i id_rsa.pub vm09
+10162  ssh vm09
+10163  nano ~/.ssh/config
+10164  ssh vm09
+10165  l
+10166  git clone git@github.com:htl-leonding/4bhitm-letsencrypt.git
+10167  cd vehicle/backend
+10168  mvn clean package
+10169  l
+10170  ./build.sh
+10171  docker login ghcr.io
+10172  docker push ghcr.io/htl-leonding/vehicle:latest
+10173  ./build.sh
+10174  l
+10175  cd vehicle/compose
+10176  docker compose up
+10177  ./build.sh
+10178  docker image ls
+10179  docker system prune -a
+10180  docker image ls
+10181  ./build.sh
+10182  docker push ghcr.io/htl-leonding/vehicle:latest
+10183  docker image ls
+10184  ./build.sh
+10185  l
+10186  quarkus dev --clean
+----
 
+.~/.ssh/config
+----
+Host vm82
+     Hostname vm82.htl-leonding.ac.at
+     User schickmairadm
+     IdentityFile ~/.ssh/id_rsa
 
+Host auth
+     Hostname auth.htl-leonding.ac.at
+     User kcadm
+     IdentityFile ~/.ssh/auth/auth_sshkey
 
+Host leoenergy
+     Hostname leoenergy.htl-leonding.ac.at
+     User stuetz
+     IdentityFile ~/.ssh/htl_key
+
+Host sbh3
+     Hostname sbh3.dispway.com
+     User dispway
+     IdentityFile ~/.ssh/dispway/key_ecdsa
+
+Host remotehost
+     ForwardAgent no
+     HostName vm09.htl-leonding.ac.at
+     RemoteCommand ssh 172.18.199.159
+     RequestTTY yes
+
+Host tws_linz@gmx.at
+  Hostname gitlab.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/htl_key
+
+Host vm09
+     Hostname vm09.htl-leonding.ac.at
+     User root
+----
+
+.vm
+----
+root@vm09:~# history
+    1  apt-get update && apt-get dist-upgrade -y
+    4  apt autoremove
+    2  reboot
+    9  exit
+   18  nano /etc/ssh/ssh_config
+   19  nano /etc/sshd/ssh_config
+   20  nano /etc/ssh/sshd_config
+   21  systemctl restart sshd
+   22  exit
+   45  systemctl status nginx
+   46  apt install nginx
+   47  systemctl enable nginx
+   48  systemctl restart nginx
+   49  netstat -ant
+   50  apt install net-tools
+   51  netstat -ant
+   52  netstat -antp
+   53  ifconfig
+   54  cd /etc/nginx/conf.d/
+   55  ls
+   56  cd ..
+   57  ll
+   58  cat nginx.conf
+   59  l
+   60  ll
+   61  cd sites-enabled/
+   62  ll
+   63  cat default
+   64  cd /var/www/html/
+   65  ll
+   66  nano index.nginx-debian.html
+   67  l
+   68  ll
+   69  nano index.nginx-debian.html
+   70  cat .bash_history
+   71  cd /etc/nginx
+   72  l
+   73  cd sites-enabled/
+   74  cd ..
+   75  cat nginx.conf
+   76  cd sites-enabled/
+   77  ll
+   78  cat default
+   79  cd /var/www
+   80  ll
+   81  exit
+   82  apt-get update && apt-get dist-upgrade -y
+   83  apt autoremove
+   84  exit
+   85  ls .ssh
+   86  cat .ssh/authorized_keys
+   87  cat /home/iotadmin/.ssh/authorized_keys >> .ssh/authorized_keys
+   88  ls .ssh
+   89  ssh-keygen -t rsa
+   90  l
+   91  ll .ssh
+   92  nano .ssh/authorized_keys
+   93  exit
+   94  echo Password authentication aus (auch für root user)
+   95  nano /etc/ssh/sshd_config
+   96  cat /var/log/dmesg
+   97  cat /var/log/auth.log
+   98  echo PasswordAutheticatio no
+   99  apt update
+  100  apt upgrade
+  101  apt install nginx
+  102  snap install --classic certbot
+  103  certbot //help
+  104  certbot --help
+  105  certbot --nginx
+  106  ll
+  107  cd /
+  108  ll
+  109  cd opt
+  110  mkdir vehicle
+  111  l
+  112  ll
+  113  chown -R iotadmin:iotadmin vehicle
+  114  ll
+  115  cd vehicle/
+  116  ll
+  117  chown -R iotadmin:iotadmin docker-compose.yaml
+  118  ll
+  119  login iotadmin
+  121  history
+----
 
 
 
