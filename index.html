@@ -565,7 +565,7 @@ pre.rouge .gs {
 <div class="details">
 <span id="author" class="author">Thomas Stütz</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2025-06-06</span>
+<span id="revdate">2025-06-07</span>
 <br><span id="revremark">Lecture Notes for Courses at HTL Leonding</span>
 </div>
 <div id="toc" class="toc2">
@@ -1352,40 +1352,10 @@ In obigem Artikel sieht man schön, wie man mit healthcheck die Startreihenfolge
 <div class="listingblock">
 <div class="title">~/.ssh/config</div>
 <div class="content">
-<pre>Host vm82
-     Hostname vm82.htl-leonding.ac.at
-     User schickmairadm
-     IdentityFile ~/.ssh/id_rsa
-
-Host auth
-     Hostname auth.htl-leonding.ac.at
-     User kcadm
-     IdentityFile ~/.ssh/auth/auth_sshkey
-
-Host leoenergy
-     Hostname leoenergy.htl-leonding.ac.at
-     User stuetz
-     IdentityFile ~/.ssh/htl_key
-
-Host sbh3
-     Hostname sbh3.dispway.com
-     User dispway
-     IdentityFile ~/.ssh/dispway/key_ecdsa
-
-Host remotehost
-     ForwardAgent no
-     HostName vm09.htl-leonding.ac.at
-     RemoteCommand ssh 172.18.199.159
-     RequestTTY yes
-
-Host tws_linz@gmx.at
-  Hostname gitlab.com
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/htl_key
-
-Host vm09
-     Hostname vm09.htl-leonding.ac.at
-     User root</pre>
+<pre>Host vmxy
+     Hostname &lt;IP-Address&gt;
+     User root
+     IdentityFile ~/.ssh/id_rsa</pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1491,7 +1461,7 @@ Host vm09
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2025-06-06 09:26:13 UTC
+Last updated 2025-06-07 09:19:01 UTC
 </div>
 </div>
 </body>
