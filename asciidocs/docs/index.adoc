@@ -429,40 +429,10 @@ image::eclipse-data-store.png[]
 
 .~/.ssh/config
 ----
-Host vm82
-     Hostname vm82.htl-leonding.ac.at
-     User schickmairadm
-     IdentityFile ~/.ssh/id_rsa
-
-Host auth
-     Hostname auth.htl-leonding.ac.at
-     User kcadm
-     IdentityFile ~/.ssh/auth/auth_sshkey
-
-Host leoenergy
-     Hostname leoenergy.htl-leonding.ac.at
-     User stuetz
-     IdentityFile ~/.ssh/htl_key
-
-Host sbh3
-     Hostname sbh3.dispway.com
-     User dispway
-     IdentityFile ~/.ssh/dispway/key_ecdsa
-
-Host remotehost
-     ForwardAgent no
-     HostName vm09.htl-leonding.ac.at
-     RemoteCommand ssh 172.18.199.159
-     RequestTTY yes
-
-Host tws_linz@gmx.at
-  Hostname gitlab.com
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/htl_key
-
-Host vm09
-     Hostname vm09.htl-leonding.ac.at
+Host vmxy
+     Hostname <IP-Address>
      User root
+     IdentityFile ~/.ssh/id_rsa
 ----
 
 .vm
