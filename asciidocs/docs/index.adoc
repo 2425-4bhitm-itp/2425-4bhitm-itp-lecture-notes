@@ -529,6 +529,29 @@ root@vm09:~# history
 image::login-with-filezilla.png[]
 
 
+== 2025-06-26 Minikube
+
+* Vollständige Playlist
+
+** https://www.youtube.com/playlist?list=PLy7NrYWoggjziYQIDorlXjTvvwweTYoNC
+
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=SmroPUd5Ff4pIaWQ&amp;list=PLy7NrYWoggjziYQIDorlXjTvvwweTYoNC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+++++
+
+image::k8s-prinzip.png[]
+
+image::scaling.png[]
+
+* k8s verwendet horizontales Scaling, dh es werden mehrere Instanzen eines Pods gestartet, die dann Last verteilen (scale-out, KEIN scale-up).
+
+image::k8s-begriffe.png[]
+
+
+
+
+
 
 
 
